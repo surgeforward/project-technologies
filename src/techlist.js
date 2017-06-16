@@ -2,12 +2,16 @@ import React, { Component } from 'react';
 // import './TechList.css';
 
 class TechList extends Component {
-  render() {
+  constructor(props) {
+    super(props)
+
     console.log(this.props.data);
-    let technoligies = this.props.data.map((obj,index)=> { return <li>obj</li>})  
+  }
+  render() {
+    let technologies = this.props.data.map((obj)=> { return <li>{obj}</li>})  
     return (
         <ul className="tech-list">
-            {this.technolgies}
+            {technologies}
         </ul>
     );
   }
