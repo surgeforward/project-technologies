@@ -8,7 +8,7 @@ class TechList extends Component {
     console.log(this.props.data);
   }
   render() {
-    let technologies = this.props.data.map((obj)=> { return <li>{obj}</li>})  
+    let technologies = this.props.data.map((obj)=> { return <li key={obj}>{obj}</li>})  
     return (
         <ul className="tech-list">
             {technologies}
