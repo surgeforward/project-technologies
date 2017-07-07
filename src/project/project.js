@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import TechList from './techlist';
+import TechList from '../techlist/techlist';
 
 class Project extends Component {
   constructor(props) {

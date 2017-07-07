@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
-import TechList from './techlist';
-import ProjectList from './projectlist';
+import logo from '../logo.svg';
+import './app.css';
+import TechList from '../techlist/techlist';
+import ProjectList from '../projectlist/projectlist';
 
 class App extends Component {
   render() {
@@ -22,7 +22,6 @@ class App extends Component {
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
         <ProjectList data={projects} />
-        // <TechList data= {["React","Angular"]} /> 
       </div>
     );
   }

@@ -1,6 +1,6 @@
 
 import React, { Component } from 'react';
-import Project from './project';
+import Project from '../project/project';
 
 class ProjectList extends Component {
   constructor(props) {
