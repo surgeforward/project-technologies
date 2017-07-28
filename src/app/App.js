@@ -21,7 +21,14 @@ class App extends Component {
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
-        <ProjectList data={projects} />
+        <div class="container">
+          {/*<HeadNav />*/}
+          <div class="body">
+            <div>
+              <ProjectList data={projects} />
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
