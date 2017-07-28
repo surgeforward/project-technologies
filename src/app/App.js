@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import logo from '../logo.svg';
 import './app.css';
-import TechList from '../techlist/techlist';
+// import TechList from '../techlist/techlist';
 import ProjectList from '../projectlist/projectlist';
+import HeaderNav from '../headnav/headernav';
 
 class App extends Component {
   render() {
@@ -21,9 +22,9 @@ class App extends Component {
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
-        <div class="container">
-          {/*<HeadNav />*/}
-          <div class="body">
+        <div className="container">
+          <HeaderNav />
+          <div className="body">
             <div>
               <ProjectList data={projects} />
             </div>
