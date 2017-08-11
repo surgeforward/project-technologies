@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 
 class HeaderNav extends Component {
-  constructor(props) {
-    super(props)
-  }
+  // constructor(props) {
+  //   super(props)
+  // }
   render() {
     return (
         <div className="head-nav">

@@ -1,6 +1,7 @@
 
 import React, { Component } from 'react';
 import Project from '../project/project';
+import { connect } from 'react-redux'
 
 class ProjectList extends Component {
   constructor(props) {
@@ -9,8 +10,8 @@ class ProjectList extends Component {
     console.log(this.props.data);
   }
   render() {
-    console
-    let projects = this.props.data.map((obj)=> { return <Project key={obj.Name} data={obj} />})  
+    // let projects = this.props.data.map((obj)=> { return <Project key={obj.Name} data={obj} />})  
+    let projects = this.props.projects.map((obj)=> { return <Project key={obj.Name} data={obj} />})  
     return (
         <ul className="project-list">
             { projects }
@@ -19,4 +20,14 @@ class ProjectList extends Component {
   }
 }
 
-export default ProjectList;
+const getProjectsList = (projects)=> {
+  return projects;
+}
+
+const mapStateToProps = (state) => {
+  return {
+    projects: getProjectsList(state.projects)
+  }
+}
+
+export default connect(mapStateToProps)(ProjectList)
