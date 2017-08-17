@@ -31,7 +31,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onProjectRemove: id=>dispatch({type: 'test', id: id})
+    onProjectRemove: id=>dispatch({type: 'REMOVE_PROJECT', id: id})
   }
   
 }
