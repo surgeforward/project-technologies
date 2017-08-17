@@ -20,7 +20,7 @@ class Project extends Component {
               <div className="item-actions">
                 <ul>
                   <li>Edit</li>
-                  <li>Remove</li>
+                  <li onClick={() => this.props.onRemove() }>Remove</li>
                 </ul>
               </div>
             <hr className="clear" />
