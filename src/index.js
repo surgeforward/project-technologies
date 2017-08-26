@@ -4,20 +4,29 @@ import App from './app/App';
 import './index.css';
 import store from './store';
 import {Provider} from 'react-redux'
+import { Router, Route} from 'react-router'
+import createHistory from 'history/createBrowserHistory'
 
+console.log(Router);
+const browserHistory = createHistory()
 let projects = [
   {
     id: 1,
+    Name: "Oliver Wyman",
+    Technologies:["Nodejs","Knockout","Mongodb"]
+  },
+  {
+    id: 2,
     Name: "CivicPlus",
     Technologies:["C#","MVC","Identity Server"]
   },
   {
-    id: 2,
+    id: 3,
     Name: "Trace3",
     Technologies:["C#","MVC"]
   },
   {
-    id: 3,
+    id: 4,
     Name: "IngoMoney",
     Technologies:["C#","MVC"]
   }
@@ -25,11 +34,14 @@ let projects = [
 
 
 var appStore = store({projects:projects});
-console.log(appStore);
+console.log(browserHistory);
 
 ReactDOM.render(
   <Provider store={appStore}>
-      <App />
-  </Provider >,
+    <Router history={browserHistory} >
+        <Route path="/" component={App}>
+        </Route>
+    </Router>
+</Provider >,
   document.getElementById('root')
 );
