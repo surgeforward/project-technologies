@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link} from 'react-router-dom'
 
 class HeaderNav extends Component {
   // constructor(props) {
@@ -8,8 +9,8 @@ class HeaderNav extends Component {
     return (
         <div className="head-nav">
            <ul className="nav-items">
-             <li>Project List</li>
-             <li>Add Technology</li>
+             <li><Link to="/projectlist">Project List</Link></li>
+             <li><Link to="/projectform">Add Technology</Link></li>
           </ul>
           <div className="subnav"></div>
         </div>

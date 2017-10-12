@@ -6,12 +6,12 @@ class TechList extends Component {
     super(props)
 
     console.log(this.props.data);
+    this.technologies = this.props.data.map((obj)=> { return <li key={obj}>{obj}</li>})  
   }
   render() {
-    let technologies = this.props.data.map((obj)=> { return <li key={obj}>{obj}</li>})  
     return (
         <ul className="tech-list">
-            {technologies}
+            {this.technologies}
         </ul>
     );
   }

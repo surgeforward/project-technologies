@@ -5,15 +5,16 @@ import { connect } from 'react-redux'
 
 class ProjectList extends Component {
   constructor(props) {
+    console.log('Component props %o',props);
     super(props)
+    this.projects = ()=> this.props.projects.map((obj)=> { return <Project key={obj.id} data={obj} onRemove={() => this.props.onProjectRemove(obj.id)}/>})  
   }
 
+
   render() {
-    // let projects = this.props.data.map((obj)=> { return <Project key={obj.Name} data={obj} />})  
-    let projects = this.props.projects.map((obj)=> { return <Project key={obj.Name} data={obj} onRemove={() => this.props.onProjectRemove(obj.id)}/>})  
     return (
         <ul className="project-list">
-            { projects }
+            { this.projects() }
         </ul>
     );
   }
@@ -31,7 +32,10 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onProjectRemove: id=>dispatch({type: 'REMOVE_PROJECT', id: id})
+    onProjectRemove: id=>{
+      console.log("removing");
+      dispatch({type: 'REMOVE_PROJECT', id: id})
+    }
   }
   
 }
