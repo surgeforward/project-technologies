@@ -9,8 +9,8 @@ class HeaderNav extends Component {
     return (
         <div className="head-nav">
            <ul className="nav-items">
-             <li><Link to="/projectlist">Project List</Link></li>
-             <li><Link to="/projectform">Add Technology</Link></li>
+             <Link to="/projectlist"><li>Project List</li></Link>
+             <Link to="/projectform"><li>Add Technology</li></Link>
           </ul>
           <div className="subnav"></div>
         </div>
