@@ -2,8 +2,9 @@
 import React, { Component } from 'react';
 import Project from '../project/project';
 import { connect } from 'react-redux'
+import AnimatedWrapper from "../AnimatedWrapper";
 
-class ProjectList extends Component {
+class ProjectListComponent extends Component {
   constructor(props) {
     console.log('Component props %o',props);
     super(props)
@@ -40,4 +41,5 @@ const mapDispatchToProps = (dispatch) => {
   
 }
 
+const ProjectList = AnimatedWrapper(ProjectListComponent)
 export default connect(mapStateToProps,mapDispatchToProps)(ProjectList)

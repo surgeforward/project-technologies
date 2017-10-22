@@ -1,8 +1,10 @@
 
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
+import AnimatedWrapper from "../AnimatedWrapper";
+
 /// A type of Import
-class EditProject extends Component {
+class EditProjectComponent extends Component {
   constructor(props) {
     super(props)
       console.log(props)
@@ -70,4 +72,5 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
+const EditProject = AnimatedWrapper(EditProjectComponent)
 export default connect(mapStateToProps,mapDispatchToProps)(EditProject)

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import TechList from '../techlist/techlist';
-import { Link} from 'react-router-dom'
+import { Link} from 'react-router-dom';
 
-class Project extends Component {
+class ProjectComponent extends Component {
   constructor(props) {
     super(props)
 
@@ -30,4 +30,4 @@ class Project extends Component {
   }
 }
 
-export default Project;
+export default ProjectComponent;

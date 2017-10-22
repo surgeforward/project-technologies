@@ -13,7 +13,14 @@ import { BrowserRouter as Router, Route, Link} from 'react-router-dom'
 import createHistory from 'history/createBrowserHistory'
 
 console.log(ProjectForm);
-const browserHistory = createHistory()
+const browserHistory = createHistory();
+import TransitionGroup from "react-transition-group/TransitionGroup"
+
+const firstChild = props => {
+  const childrenArray = React.Children.toArray(props.children);
+  return childrenArray[0] || null;
+};
+
 let projects = [
   {
     id: 1,
@@ -52,10 +59,38 @@ ReactDOM.render(
           </p> */}
           <div className="container">
             <HeaderNav />
+            <Route exact path="/"
+              children={ ({ match, ...rest }) => (
+                <TransitionGroup component={firstChild} >
+                  {match && <App {...rest} />}
+                </TransitionGroup>
+            )}/>
+
+            <Route exact path="/projectlist"
+              children={ ({ match, ...rest }) => (
+                <TransitionGroup component={firstChild} >
+                  {match && <App {...rest} />}
+                </TransitionGroup>
+            )}/>
+
+            <Route exact path="/projectform"
+              children={ ({ match, ...rest }) => (
+                <TransitionGroup component={firstChild} >
+                  {match && <ProjectForm {...rest} />}
+                </TransitionGroup>
+            )}/>
+
+            <Route exact path="/editproject/:id"
+              children={ ({ match, ...rest }) => (
+                <TransitionGroup component={firstChild} >
+                  {match && <EditProject {...rest} />}
+                </TransitionGroup>
+            )}/>
+            {/* 
             <Route exact path="/" component={App} />
             <Route exact path="/projectlist" component={App} />
             <Route path="/projectform" component={ProjectForm} />
-            <Route path="/editproject/:id" component={EditProject} />
+            <Route path="/editproject/:id" component={EditProject} /> */}
           </div>
         </div>
     </Router>

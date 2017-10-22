@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
+import AnimatedWrapper from "../AnimatedWrapper";
 /// A type of Import
-class ProjectForm extends Component {
+class ProjectFormComponent extends Component {
   constructor(props) {
     super(props)
 
@@ -72,4 +73,5 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
+const ProjectForm = AnimatedWrapper(ProjectFormComponent)
 export default connect(mapStateToProps,mapDispatchToProps)(ProjectForm)
