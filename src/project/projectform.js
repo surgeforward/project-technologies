@@ -73,5 +73,5 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-const ProjectForm = AnimatedWrapper(ProjectFormComponent)
+const ProjectForm = ProjectFormComponent
 export default connect(mapStateToProps,mapDispatchToProps)(ProjectForm)

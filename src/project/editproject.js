@@ -72,5 +72,5 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-const EditProject = AnimatedWrapper(EditProjectComponent)
+const EditProject = EditProjectComponent
 export default connect(mapStateToProps,mapDispatchToProps)(EditProject)

@@ -41,5 +41,5 @@ const mapDispatchToProps = (dispatch) => {
   
 }
 
-const ProjectList = AnimatedWrapper(ProjectListComponent)
+const ProjectList = ProjectListComponent
 export default connect(mapStateToProps,mapDispatchToProps)(ProjectList)
